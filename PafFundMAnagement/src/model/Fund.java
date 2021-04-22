@@ -1,4 +1,3 @@
-//IT19189468
 package model;
 
 import java.sql.*;
