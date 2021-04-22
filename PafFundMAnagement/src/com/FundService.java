@@ -1,4 +1,3 @@
-//IT19189468
 package com;
 
 import model.Fund;
