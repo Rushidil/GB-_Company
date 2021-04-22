@@ -13,6 +13,16 @@ import org.jsoup.nodes.Document;
 @Path("/Items")
 public class ItemService
 {
+	Item itemObj = new Item();
+	@GET
+	@Path("/")
+	@Produces(MediaType.TEXT_HTML)
+	public String readItems()
+	{
+		return itemObj.readItems(); 
+	}
+	
+	
 
 }
 
