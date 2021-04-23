@@ -67,14 +67,16 @@ public class Fund {
 	 {
 		 	String output = "";
 	 
-		 	try
-		 	{
+		 		try
+		 		{
 		 				Connection con = connect();
 		 				if (con == null)
 		 				{return "Error while connecting to the database for reading."; }
 	 
 		 				// Prepare the html table to be displayed
-		 				output = "<table border='1'><tr><th>Name</th><th>Address</th>" + "<th>Amount</th>" + "<th>Email</th>" + "<th>Phone</th>" + "<th>NIC</th>"+"<th>Update</th><th>Remove</th></tr>";
+		 				output = "<table border='1'><tr><th>Name</th><th>Address</th>" + "<th>Amount</th>" 
+		 						 + "<th>Email</th>" + "<th>Phone</th>" + "<th>NIC</th>"
+		 						 +"<th>Update</th><th>Remove</th></tr>";
 
 		 				String query = "select * from fundsdetails";
 		 				Statement stmt = con.createStatement();
@@ -111,14 +113,14 @@ public class Fund {
 	 
 		 				// Complete the html table
 		 				output += "</table>";
-		 	}
-		 	catch (Exception e)
-		 	{
+		 		}
+		 		catch (Exception e)
+		 		{
 		 				output = "Error while reading the funds.";
 		 				System.err.println(e.getMessage());
-		 	}
+		 		}
 		 	
-		 	return output;
+		 		return output;
 	 }
 	 
 	 public String updateFund(String id, String name, String address, String amount, String email, String phone, String nic)
@@ -126,8 +128,8 @@ public class Fund {
 	 {
 		 	String output = "";
 	 
-		 	try
-		 	{
+		 		try
+		 		{
 		 				Connection con = connect();
 		 				
 		 				if (con == null)
@@ -154,22 +156,22 @@ public class Fund {
 		 				con.close();
 		 				
 		 				output = "Updated successfully";
-		 	}
-		 	catch (Exception e)
-		 	{
+		 		}
+		 		catch (Exception e)
+		 		{
 		 				output = "Error while updating the fund.";
 		 				System.err.println(e.getMessage());
-		 	}
+		 		}
 		 	
-		 	return output;
+		 		return output;
 	 }
 	 
 	 public String deleteFund(String id)
 	 {
 		 	String output = "";
 		 	
-		 	try
-		 	{
+		 		try
+		 		{
 		 				Connection con = connect();
 		 				
 		 				if (con == null)
@@ -187,14 +189,14 @@ public class Fund {
 		 				con.close();
 	 
 		 				output = "Deleted successfully";
-		 	}
-		 	catch (Exception e)
-		 	{
+		 		}
+		 		catch (Exception e)
+		 		{
 		 				output = "Error while deleting the fund.";
 		 				System.err.println(e.getMessage());
-		 	}
+		 		}
 		 	
-		 	return output;
+		 		return output;
 	 }
 	
 }
