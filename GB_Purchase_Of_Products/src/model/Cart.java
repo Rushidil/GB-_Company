@@ -20,7 +20,7 @@ public class Cart {
 		 return con;
 		 } 
 		
-		
+		//to insert items to cart
 		public String insertCart(String ptname , Double unitPrice, Integer qty)
 		 {
 			
@@ -64,7 +64,7 @@ public class Cart {
 		 
 	    } 
 		
-		
+		//to read items in cart
 		public String readCarts()
 		 {
 			
@@ -75,7 +75,8 @@ public class Cart {
 		 if (con == null)
 		 {return "Error while connecting to the database for reading."; }
 		 // Prepare the html table to be displayed
-		         output = "<table border='1'><tr><th>Product Name</th><th>Unit Price</th>" +
+		         output = "<table border='1'><tr><th>Cart ID</th><th>Product Name</th>" +
+		        		 "<th>Unit Price</th>" +
 		                  "<th>Quantity</th>" +
 		                  "<th>Update</th><th>Remove</th></tr>";
 
@@ -91,7 +92,8 @@ public class Cart {
 		 String quantity =rs.getString("qty");
 		
 		 // Add into the html table
-		 output += "<tr><td>" + productname + "</td>";
+		 output += "<tr><td>" + cartID + "</td>";
+		 output += "<td>" + productname + "</td>";
 		 output += "<td>" + uPrice + "</td>";
 		 output += "<td>" + quantity + "</td>";
 		
@@ -115,7 +117,7 @@ public class Cart {
 		 } 
 		
 		
-		//public String updateCart(String ID, String ptname , Double unitPrice, Integer qty)
+		
 		public String updateCart(String cartID, String productname, String uPrice, String quantity)
 		 {
 		 String output = "";
@@ -172,10 +174,6 @@ public class Cart {
 		 }
 
 
-		//public String updateCart(String cartID, String productname, String uPrice, String quantity) {
-			// TODO Auto-generated method stub
-			//return null;
-		//} 
 		
 		
 		

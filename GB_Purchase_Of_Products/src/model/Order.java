@@ -28,6 +28,7 @@ public class Order {
 		 return con;
 		 } 
 		
+		//to insert delivery details to place an order
 		
 		public String insertOrder(String date , String cname , String phone, String address, String email)
 		 {
@@ -64,6 +65,7 @@ public class Order {
 		 preparedStmt2.execute();
 		 
 		 //to get cartID as foreign key
+		 
 		 String query3 = "select cID from cart order by cID desc limit 1";
 		 PreparedStatement preparedStmt3 = con.prepareStatement(query3);
 		 ResultSet rs3 = preparedStmt3.executeQuery(query3);
@@ -104,7 +106,7 @@ public class Order {
 		 
 	    } 
 		
-		
+		//read all orders
 		public String readOrders()
 		 {
 			
@@ -115,8 +117,10 @@ public class Order {
 		 if (con == null)
 		 {return "Error while connecting to the database for reading."; }
 		 // Prepare the html table to be displayed
-		         output = "<table border='1'><tr><th>Order Date</th><th>Customer Name</th>" +
-		                  "<th>Phone number</th>" +
+		         output = "<table border='1'><tr><th>Order ID</th><th>Cart ID</th>" +
+		        		 "<th>Order Date</th>" +
+		        		 "<th>Customer Name</th>" +
+		        		 "<th>Phone number</th>" +
 		                  "<th>Address</th>" +
 		                   "<th>Email</th>" +
 		                   "<th>Total Price</th>" +
@@ -129,6 +133,7 @@ public class Order {
 		 while (rs.next())
 		 {
 		 String orderID = Integer.toString(rs.getInt("oID"));
+		 String cartID = Integer.toString(rs.getInt("cID"));
 		 String oDate = rs.getString("date");
 		 String cusName = rs.getString("cname");
 		 String cPhone =rs.getString("phone");
@@ -137,7 +142,9 @@ public class Order {
 		 String total = Double.toString( rs.getDouble("total"));
 		 
 		 // Add into the html table
-		 output += "<tr><td>" + oDate + "</td>";
+		 output += "<tr><td>" + orderID + "</td>";
+		 output += "<td>" + cartID + "</td>";
+		 output += "<td>" + oDate + "</td>";
 		 output += "<td>" + cusName + "</td>";
 		 output += "<td>" + cPhone + "</td>";
 		 output += "<td>" + cAddress + "</td>";
