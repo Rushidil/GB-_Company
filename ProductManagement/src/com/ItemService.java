@@ -54,6 +54,20 @@ public class ItemService
 	 String output = itemObj.updateItem(ID,code, name, desc, researcher, email);
 	return output;
 	}
+	@DELETE
+	@Path("/")
+	@Consumes(MediaType.APPLICATION_XML)
+	@Produces(MediaType.TEXT_PLAIN)
+	public String deleteItem(String itemData)
+	{
+	//Convert the input string to an XML document
+	 Document doc = Jsoup.parse(itemData, "", Parser.xmlParser());
+
+	//Read the value from the element <itemID>
+	 String ID = doc.select("ItemID").text();
+	 String output = itemObj.deleteItem(ID);
+	return output;
+	}
 	
 	
 	
