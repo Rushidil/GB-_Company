@@ -103,10 +103,10 @@ public class Fund {
 	 
 		 						// buttons
 		 						output += "<td><input name='btnUpdate' type='button' value='Update'class='btn btn-secondary'></td>"
-		 										+ "<td><form method='post' action='funds.jsp'>"
-		 										+ "<input name='btnRemove' type='submit' value='Remove'class='btn btn-danger'>"
-		 										+ "<input name='id' type='hidden' value='" + id
-		 										+ "'>" + "</form></td></tr>";
+		 									+ "<td><form method='post' action='funds.jsp'>"
+		 									+ "<input name='btnRemove' type='submit' value='Remove'class='btn btn-danger'>"
+		 									+ "<input name='id' type='hidden' value='" + id
+		 									+ "'>" + "</form></td></tr>";
 		 				}
 		 				
 		 				con.close();
