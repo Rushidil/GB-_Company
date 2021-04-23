@@ -78,7 +78,7 @@ public class Payment {
 	         output = "<table border='1'><tr><th>Payment ID</th><th>First Name</th>" +
 	        		 "<th>Last Name</th>" +
 	                  "<th>Card Number</th>" +
-	                  "<th>Card Date</th>" +
+	                  "<th>Payment Date</th>" +
 	                   "<th>CCV</th>" +
 	                   "<th>Update</th><th>Remove</th></tr>";
 
