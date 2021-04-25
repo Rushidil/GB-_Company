@@ -23,20 +23,7 @@ public class UserService
 		return userObj.readItems();
 	}
 	
-	@POST
-	@Path("/")
-	@Consumes(MediaType.APPLICATION_FORM_URLENCODED)
-	@Produces(MediaType.TEXT_PLAIN)
-	public String insertUser(
-		@FormParam("userID") String userID,
-		@FormParam("name") String name,
-		@FormParam("email") String email,
-		@FormParam("password") String password,
-		@FormParam("nic") String nic)
-	{
-		String output = userObj.insertUser(userID, name, email, password, nic);
-		return output;
-	}
+
 	
 	@PUT
 	@Path("/")
