@@ -117,8 +117,7 @@ public class Order {
 		 if (con == null)
 		 {return "Error while connecting to the database for reading."; }
 		 // Prepare the html table to be displayed
-		         output = "<table border='1'><tr><th>Order ID</th><th>Cart ID</th>" +
-		        		 "<th>Order Date</th>" +
+		         output = "<table border='1'><tr><th>Order Date</th>" +
 		        		 "<th>Customer Name</th>" +
 		        		 "<th>Phone number</th>" +
 		                  "<th>Address</th>" +
@@ -142,9 +141,9 @@ public class Order {
 		 String total = Double.toString( rs.getDouble("total"));
 		 
 		 // Add into the html table
-		 output += "<tr><td>" + orderID + "</td>";
-		 output += "<td>" + cartID + "</td>";
-		 output += "<td>" + oDate + "</td>";
+		
+		
+		 output += "<tr><td>" + oDate + "</td>";
 		 output += "<td>" + cusName + "</td>";
 		 output += "<td>" + cPhone + "</td>";
 		 output += "<td>" + cAddress + "</td>";

@@ -75,10 +75,9 @@ public class Cart {
 		 if (con == null)
 		 {return "Error while connecting to the database for reading."; }
 		 // Prepare the html table to be displayed
-		         output = "<table border='1'><tr><th>Cart ID</th><th>Product Name</th>" +
-		        		 "<th>Unit Price</th>" +
-		                  "<th>Quantity</th>" +
-		                  "<th>Update</th><th>Remove</th></tr>";
+		         output = "<table border='1'><tr><th>Product Name</th><th>Unit Price</th>" +
+		        		 "<th>Quantity</th>" +
+		                 "<th>Update</th><th>Remove</th></tr>";
 
 		 String query = "select * from cart";
 		 Statement stmt = con.createStatement();
@@ -92,8 +91,8 @@ public class Cart {
 		 String quantity =rs.getString("qty");
 		
 		 // Add into the html table
-		 output += "<tr><td>" + cartID + "</td>";
-		 output += "<td>" + productname + "</td>";
+		
+		 output += "<tr><td>" + productname + "</td>";
 		 output += "<td>" + uPrice + "</td>";
 		 output += "<td>" + quantity + "</td>";
 		

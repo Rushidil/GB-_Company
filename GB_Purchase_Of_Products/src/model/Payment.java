@@ -75,7 +75,7 @@ public class Payment {
 	 if (con == null)
 	 {return "Error while connecting to the database for reading."; }
 	 // Prepare the html table to be displayed
-	         output = "<table border='1'><tr><th>Payment ID</th><th>First Name</th>" +
+	         output = "<table border='1'><tr><th>First Name</th>" +
 	        		 "<th>Last Name</th>" +
 	                  "<th>Card Number</th>" +
 	                  "<th>Expiration Date</th>" +
@@ -95,8 +95,8 @@ public class Payment {
 	 String pCdate = rs.getString("cdate");
 	 String pCCV =rs.getString("ccv");
 	 // Add into the html table
-	 output += "<tr><td>" + paymentID + "</td>";
-	 output += "<td>" + cusFname + "</td>";
+	
+	 output += "<tr><td>" + cusFname + "</td>";
 	 output += "<td>" + cusLname + "</td>";
 	 output += "<td>" + pCardno + "</td>";
 	 output += "<td>" + pCdate + "</td>";
